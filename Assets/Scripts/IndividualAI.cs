@@ -13,6 +13,7 @@ public class IndividualAI : MonoBehaviour
     
     [Header("Agent Information")] 
     public State currentState = State.Idle;
+    // [SerializeField] private GroupAI groupAI;
     public CollisionDetector detector;
     public LayerMask enemyLayer;
     public List<string> validTargetTags = new List<string>();
@@ -25,6 +26,8 @@ public class IndividualAI : MonoBehaviour
     public float chaseResumeDistance;
     
     public float speed;
+
+    // private bool inRange;
     
     [Header("Boost Settings")]
     public float speedBoost;
