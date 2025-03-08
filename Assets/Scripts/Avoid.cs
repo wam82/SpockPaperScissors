@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Avoid : AIMovement
 {
-    public override SteeringOutput GetSteering(AIAgent agent)
+    public override SteeringOutput GetSteering(IndividualAI agent)
     {
         SteeringOutput output = new SteeringOutput();
 
@@ -17,7 +17,7 @@ public class Avoid : AIMovement
             Vector3 futurePosition = avoidanceTarget;
 
             Vector3 desiredVelocity = futurePosition - agent.transform.position;
-            desiredVelocity = desiredVelocity.normalized * agent.speed;
+            desiredVelocity = desiredVelocity.normalized * agent.baseSpeed;
 
             output.Linear = desiredVelocity - agent.Velocity;
         }

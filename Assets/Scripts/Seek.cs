@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Seek : AIMovement
 {
-    public override SteeringOutput GetSteering(AIAgent agent)
+    public override SteeringOutput GetSteering(IndividualAI agent)
     {
         SteeringOutput output = base.GetSteering(agent);
             
@@ -11,7 +11,7 @@ public class Seek : AIMovement
         Vector3 futurePosition = agent.TargetPosition + agent.TrackedTarget.forward * ahead;
 
         Vector3 desiredVelocity = futurePosition - transform.position;
-        desiredVelocity = desiredVelocity.normalized * agent.speed;
+        desiredVelocity = desiredVelocity.normalized * agent.baseSpeed;
         Vector3 steering = desiredVelocity - agent.Velocity;
         output.Linear = steering;
             

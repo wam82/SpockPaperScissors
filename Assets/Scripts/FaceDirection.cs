@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FaceDirection : AIMovement
 {
-    public override SteeringOutput GetSteering(AIAgent agent)
+    public override SteeringOutput GetSteering(IndividualAI agent)
     {
         SteeringOutput output = new SteeringOutput();
         Quaternion angular = output.Angular;
