@@ -4,7 +4,7 @@ public class Avoid : AIMovement
 {
     public override SteeringOutput GetSteering(IndividualAI agent)
     {
-        SteeringOutput output = new SteeringOutput();
+        SteeringOutput output = base.GetSteering(agent);
 
         Vector3 ray = agent.Velocity.normalized * agent.lookAhead;
         
