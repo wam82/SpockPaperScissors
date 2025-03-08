@@ -59,6 +59,7 @@ public class IndividualAI : MonoBehaviour
     
     void Update()
     {
+        Debug.DrawRay(transform.position, transform.forward * 10, Color.yellow);
         float currentTime = Time.time;
         if ((holder = TargetToFlee()) != null && currentState != State.Fleeing)
         {
@@ -76,12 +77,12 @@ public class IndividualAI : MonoBehaviour
 
         if (currentState == State.Seeking)
         {
-            // DebugUtils.DrawCircle(transform.position, Vector3.up, Color.red, fleeTriggerDistance);
-            // DebugUtils.DrawCircle(transform.position, Vector3.up, Color.yellow, chaseResumeDistance);
             if (isBoosting)
             {
                 Cooldown();
             }
+            // DebugUtils.DrawCircle(transform.position, Vector3.up, Color.red, fleeTriggerDistance);
+            // DebugUtils.DrawCircle(transform.position, Vector3.up, Color.yellow, chaseResumeDistance);
             Move();
         }
 
@@ -171,6 +172,45 @@ public class IndividualAI : MonoBehaviour
         
         return closest;
     }
+    
+    private Transform ChangeTarget()
+    {
+        float minDistance = Mathf.Infinity;
+        float secondMinDistance = Mathf.Infinity;
+        Transform closest = null;
+        Transform secondClosest = null;
+
+        foreach (string tag in validTargetTags)
+        {
+            GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject target in targets)
+            {
+                Transform targetTransform = target.transform;
+                float distance = Vector3.Distance(transform.position, targetTransform.position);
+
+                if (targetTransform == trackedTarget)
+                    continue; // Ignore current target if possible
+
+                if (distance < minDistance)
+                {
+                    secondMinDistance = minDistance;
+                    secondClosest = closest;
+
+                    minDistance = distance;
+                    closest = targetTransform;
+                }
+                else if (distance < secondMinDistance)
+                {
+                    secondMinDistance = distance;
+                    secondClosest = targetTransform;
+                }
+            }
+        }
+
+        // If closest is the same as the current target, return the second closest instead
+        return (closest == trackedTarget) ? secondClosest : closest;
+    }
+
 
     private void Move()
     {

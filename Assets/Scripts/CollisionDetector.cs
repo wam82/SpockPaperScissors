@@ -23,6 +23,7 @@ public class CollisionDetector : MonoBehaviour
             //     return new Collision(hit.point, hit.normal);
             // }
 
+            Debug.Log("Hit");
             return new Collision(hit.point, hit.normal);
         }
 
