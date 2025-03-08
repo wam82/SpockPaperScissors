@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Collision
+public class PotentialCollision
 {
     public Vector3 Position;
     public Vector3 Normal;
 
-    public Collision(Vector3 position, Vector3 normal)
+    public PotentialCollision(Vector3 position, Vector3 normal)
     {
         Position = position;
         Normal = normal;

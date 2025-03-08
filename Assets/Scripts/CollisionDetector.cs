@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionDetector : MonoBehaviour
@@ -6,7 +8,7 @@ public class CollisionDetector : MonoBehaviour
     [Tooltip("Configure which layers to check against. For example, obstacles and (if needed) friendly characters.")]
     public LayerMask collisionMask;
     
-    public Collision GetCollision(Vector3 position, Vector3 moveAmount)
+    public PotentialCollision GetCollision(Vector3 position, Vector3 moveAmount)
     {
         // Calculate the direction (normalized) and the distance to check
         Vector3 direction = moveAmount.normalized;
@@ -24,7 +26,7 @@ public class CollisionDetector : MonoBehaviour
             // }
 
             Debug.Log("Hit");
-            return new Collision(hit.point, hit.normal);
+            return new PotentialCollision(hit.point, hit.normal);
         }
 
         return null;

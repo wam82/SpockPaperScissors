@@ -1,14 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AIMovement : MonoBehaviour
 {
-    public virtual SteeringOutput GetKinematic(IndividualAI agent)
-    {
-        return new SteeringOutput { Angular = agent.transform.rotation };
-    }
-
     public virtual SteeringOutput GetSteering(IndividualAI agent)
     {
-        return new SteeringOutput { Angular = agent.transform.rotation };
+        return new SteeringOutput { angular = Quaternion.identity };
     }
 }

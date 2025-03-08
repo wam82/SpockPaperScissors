@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class IndividualAI : MonoBehaviour
 {
@@ -10,19 +10,21 @@ public class IndividualAI : MonoBehaviour
     {
         Idle, Fleeing, Seeking
     }
-    [Header("Agent Settings")] 
+    
+    [Header("Agent Information")] 
     public State currentState = State.Idle;
     public CollisionDetector detector;
     public LayerMask enemyLayer;
     public List<string> validTargetTags = new List<string>();
     
+    [Header("Agent Settings")]
     public float lookAhead;
     public float avoidDistance;
     
     public float fleeTriggerDistance;
     public float chaseResumeDistance;
     
-    public float baseSpeed;
+    public float speed;
     
     [Header("Boost Settings")]
     public float speedBoost;
@@ -33,33 +35,49 @@ public class IndividualAI : MonoBehaviour
     private float cooldownTime = 0f;
     private bool isBoosting = false;
     
+    public Vector3 Velocity { get; set; }
+    
     [Header("Target Information")]
-    [SerializeField] private Transform trackedTarget;
-    [SerializeField] private Vector3 targetPosition;
-    
+    public Transform trackedTarget;
+    private Vector3 targetPosition;
     private Transform holder;
-    
-    public Transform TrackedTarget
-    {
-        get => trackedTarget;
-    }
     
     public Vector3 TargetPosition
     {
         get => trackedTarget != null ? trackedTarget.position : targetPosition;
     }
-    public Vector3 Velocity { get; set; }
     
-    void Start()
+    public Vector3 TargetForward
+    {
+        get => trackedTarget != null ? trackedTarget.forward : Vector3.forward;
+    }
+    
+    public void TrackTarget(Transform targetTransform)
+    {
+        holder = trackedTarget;
+        trackedTarget = targetTransform;
+    }
+
+    public void RestoreTarget()
+    {
+        trackedTarget = holder;
+        holder = null;
+    }
+
+    public void UnTrackTarget()
+    {
+        trackedTarget = null;
+    }
+    
+    private void Start()
     {
         currentState = State.Idle;
         trackedTarget = FindClosestTarget();
         currentState = State.Seeking;
     }
-    
-    void Update()
+
+    private void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * 10, Color.yellow);
         float currentTime = Time.time;
         if ((holder = TargetToFlee()) != null && currentState != State.Fleeing)
         {
@@ -74,18 +92,17 @@ public class IndividualAI : MonoBehaviour
             trackedTarget = FindClosestTarget();
             holder = null;
         }
-
+        
         if (currentState == State.Seeking)
         {
             if (isBoosting)
             {
                 Cooldown();
             }
-            // DebugUtils.DrawCircle(transform.position, Vector3.up, Color.red, fleeTriggerDistance);
-            // DebugUtils.DrawCircle(transform.position, Vector3.up, Color.yellow, chaseResumeDistance);
+            
             Move();
         }
-
+        
         if (currentState == State.Fleeing)
         {
             if (!isBoosting && currentTime >= cooldownTime)
@@ -101,21 +118,21 @@ public class IndividualAI : MonoBehaviour
             Move();
         }
     }
-
+    
     private void Boost()
     { 
-       isBoosting = true;
-       boostTime = Time.time + boostDuration;
-       baseSpeed += speedBoost;
+        isBoosting = true;
+        boostTime = Time.time + boostDuration;
+        speed += speedBoost;
     }
-
+    
     private void Cooldown()
     {
         isBoosting = false;
-        baseSpeed -= speedBoost;
+        speed -= speedBoost;
         cooldownTime = Time.time + boostCooldown;
     }
-
+    
     private bool HasFled()
     {
         float distance = Vector3.Distance(transform.position, TargetPosition);
@@ -150,7 +167,7 @@ public class IndividualAI : MonoBehaviour
         }
         return closest;
     }
-
+    
     private Transform FindClosestTarget()
     {
         float minDistance = Mathf.Infinity;
@@ -210,38 +227,37 @@ public class IndividualAI : MonoBehaviour
         // If closest is the same as the current target, return the second closest instead
         return (closest == trackedTarget) ? secondClosest : closest;
     }
-
-
+    
     private void Move()
     {
         GetSteeringSum(out Vector3 steeringForceSum, out Quaternion rotation);
         Velocity += steeringForceSum * Time.deltaTime;
-        Velocity = Vector3.ClampMagnitude(Velocity, baseSpeed);
+        Velocity = Vector3.ClampMagnitude(Velocity, speed);
         transform.position += Velocity * Time.deltaTime;
         transform.rotation *= rotation;
     }
     
-    private void GetSteeringSum(out Vector3 steering, out Quaternion rotation)
+    private void GetSteeringSum(out Vector3 steeringForceSum, out Quaternion rotation)
     {
-        steering = Vector3.zero;
+        steeringForceSum = Vector3.zero;
         rotation = Quaternion.identity;
         AIMovement[] movements = GetComponents<AIMovement>();
         
         // Filter which movements
         if (currentState == State.Seeking)
         {
-            movements = movements.Where(m => m is Seek || m is FaceDirection || m is Avoid).ToArray();
+            movements = movements.Where(m => m is Seek || m is FaceDirection).ToArray();
         }
         
         if (currentState == State.Fleeing)
         {
-            movements = movements.Where(m => m is Flee || m is FaceDirection || m is Avoid).ToArray();
+            movements = movements.Where(m => m is Flee || m is FaceDirection).ToArray();
         }
 
         foreach (AIMovement movement in movements)
         {
-            steering += movement.GetSteering(this).Linear;
-            rotation *= movement.GetSteering(this).Angular;
+            steeringForceSum += movement.GetSteering(this).linear;
+            rotation *= movement.GetSteering(this).angular;
         }
     }
 }
