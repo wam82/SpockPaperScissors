@@ -7,6 +7,7 @@ public class Kill : MonoBehaviour
         if (IsTarget(other.transform))
         {
             PursuitRegistry.Instance.DestroyPursuit(other.transform);
+            PlayerManager.Instance.UpdateList(other.gameObject);
             Destroy(other.gameObject);
         }
     }
