@@ -63,7 +63,7 @@ MonoBehaviour:
   - Lizard
   calmSpeed: 2
   averageSpeed: 6
-  aggressiveSpeed: 2
+  aggressiveSpeed: 10
   aggressiveness: 0
   lowFriendlies: 2
   highFriendlies: 7
@@ -79,6 +79,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Knife
@@ -141,6 +145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Blade
@@ -203,6 +211,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Scissor
@@ -265,6 +277,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Axe
@@ -327,6 +343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Clipper
@@ -389,6 +409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Shear
@@ -451,6 +475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Dagger
@@ -513,6 +541,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Butcher
@@ -575,6 +607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Sword
@@ -637,6 +673,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 113487280594177158}
     m_Modifications:
+    - target: {fileID: 3185050240799427446, guid: 793d15424e948469886591d10a9c6731, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 4392778365004559982}
     - target: {fileID: 5236784091412829903, guid: 793d15424e948469886591d10a9c6731, type: 3}
       propertyPath: m_Name
       value: Razor

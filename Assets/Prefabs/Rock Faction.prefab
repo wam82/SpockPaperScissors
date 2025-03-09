@@ -63,7 +63,7 @@ MonoBehaviour:
   - Lizard
   calmSpeed: 2
   averageSpeed: 6
-  aggressiveSpeed: 2
+  aggressiveSpeed: 10
   aggressiveness: 0
   lowFriendlies: 2
   highFriendlies: 7
@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Boulder
@@ -181,6 +185,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Basalt
@@ -243,6 +251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Granite
@@ -305,6 +317,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Cobblestone
@@ -367,6 +383,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Obsidian
@@ -429,6 +449,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Bedrock
@@ -491,6 +515,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Onyx
@@ -553,6 +581,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Deepslate
@@ -615,6 +647,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Stone
@@ -677,6 +713,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025262236161761110, guid: d8b33967130064679b9b2302d0749a03, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7584728157440544655}
     - target: {fileID: 2604302737331522376, guid: d8b33967130064679b9b2302d0749a03, type: 3}
       propertyPath: m_Name
       value: Rock

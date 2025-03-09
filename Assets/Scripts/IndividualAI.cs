@@ -16,7 +16,7 @@ public class IndividualAI : MonoBehaviour
     [SerializeField] private GroupAI groupAI;
     public CollisionDetector detector;
     public LayerMask enemyLayer;
-    public List<string> validTargetTags = new List<string>();
+    public List<string> validTargetTags = new();
     
     [Header("Agent Settings")]
     public float lookAhead;
@@ -82,6 +82,12 @@ public class IndividualAI : MonoBehaviour
     private void Update()
     {
         float currentTime = Time.time;
+        
+        if (!isBoosting)
+        {
+            speed = groupAI.aggressiveness;
+        }
+        
         if ((holder = TargetToFlee()) != null && currentState != State.Fleeing)
         {
             currentState = State.Fleeing;
