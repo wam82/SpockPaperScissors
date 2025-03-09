@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8160532796070631878}
   - component: {fileID: 3580063708294884369}
   - component: {fileID: 8598646238329620791}
+  - component: {fileID: 3911962735465187471}
   - component: {fileID: 6278247582616904299}
   - component: {fileID: 1296522198137976279}
   m_Layer: 6
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  groupAI: {fileID: 0}
   detector: {fileID: 241137132084884641}
   enemyLayer:
     serializedVersion: 2
@@ -119,6 +121,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c490e14ce092f4cf99171a7c9622d25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3911962735465187471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604302737331522376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99830f7e5b5414e74b35597726ed7f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &6278247582616904299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -165,7 +179,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &4511280729693620232
 GameObject:

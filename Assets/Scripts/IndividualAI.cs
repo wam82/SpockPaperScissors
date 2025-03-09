@@ -13,7 +13,7 @@ public class IndividualAI : MonoBehaviour
     
     [Header("Agent Information")] 
     public State currentState = State.Idle;
-    // [SerializeField] private GroupAI groupAI;
+    [SerializeField] private GroupAI groupAI;
     public CollisionDetector detector;
     public LayerMask enemyLayer;
     public List<string> validTargetTags = new List<string>();
@@ -26,8 +26,6 @@ public class IndividualAI : MonoBehaviour
     public float chaseResumeDistance;
     
     public float speed;
-
-    // private bool inRange;
     
     [Header("Boost Settings")]
     public float speedBoost;
@@ -44,6 +42,7 @@ public class IndividualAI : MonoBehaviour
     public Transform trackedTarget;
     private Vector3 targetPosition;
     private Transform holder;
+    private Transform closestTarget;
     
     public Vector3 TargetPosition
     {
@@ -76,6 +75,7 @@ public class IndividualAI : MonoBehaviour
     {
         currentState = State.Idle;
         trackedTarget = FindClosestTarget();
+        closestTarget = trackedTarget;
         currentState = State.Seeking;
     }
 
@@ -85,6 +85,7 @@ public class IndividualAI : MonoBehaviour
         if ((holder = TargetToFlee()) != null && currentState != State.Fleeing)
         {
             currentState = State.Fleeing;
+            PursuitRegistry.Instance.RegisterPursuit(transform, holder);
             trackedTarget = holder;
             holder = null;
         }
@@ -92,7 +93,9 @@ public class IndividualAI : MonoBehaviour
         if (currentState == State.Fleeing && HasFled())
         {
             currentState = State.Seeking;
+            PursuitRegistry.Instance.RemovePursuit(transform);
             trackedTarget = FindClosestTarget();
+            closestTarget = trackedTarget;
             holder = null;
         }
         
@@ -101,6 +104,12 @@ public class IndividualAI : MonoBehaviour
             if (isBoosting)
             {
                 Cooldown();
+            }
+
+            if (PursuitRegistry.Instance.WasPursuing(transform))
+            {
+                ChangeTarget();
+                PursuitRegistry.Instance.ClearPursuer(transform);
             }
             
             Move();
@@ -196,39 +205,29 @@ public class IndividualAI : MonoBehaviour
     private Transform ChangeTarget()
     {
         float minDistance = Mathf.Infinity;
-        float secondMinDistance = Mathf.Infinity;
-        Transform closest = null;
-        Transform secondClosest = null;
+        Transform newClosest = null;
 
         foreach (string tag in validTargetTags)
         {
             GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
             foreach (GameObject target in targets)
             {
-                Transform targetTransform = target.transform;
-                float distance = Vector3.Distance(transform.position, targetTransform.position);
+                // Skip if this target is the same as the previous closest target
+                if (target.transform == closestTarget)
+                {
+                    continue;
+                }
 
-                if (targetTransform == trackedTarget)
-                    continue; // Ignore current target if possible
-
+                float distance = Vector3.Distance(transform.position, target.transform.position);
                 if (distance < minDistance)
                 {
-                    secondMinDistance = minDistance;
-                    secondClosest = closest;
-
                     minDistance = distance;
-                    closest = targetTransform;
-                }
-                else if (distance < secondMinDistance)
-                {
-                    secondMinDistance = distance;
-                    secondClosest = targetTransform;
+                    newClosest = target.transform;
                 }
             }
         }
-
-        // If closest is the same as the current target, return the second closest instead
-        return (closest == trackedTarget) ? secondClosest : closest;
+    
+        return newClosest;
     }
     
     private void Move()
