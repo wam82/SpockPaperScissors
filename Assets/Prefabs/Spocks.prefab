@@ -1,0 +1,733 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7357105663309315375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1420403847458548316}
+  - component: {fileID: 7876435045527917981}
+  m_Layer: 0
+  m_Name: Spocks
+  m_TagString: Spocks
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1420403847458548316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357105663309315375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7070976980362161706}
+  - {fileID: 1502287219597886551}
+  - {fileID: 3248059930231842299}
+  - {fileID: 9157041579215209732}
+  - {fileID: 6985518031352005306}
+  - {fileID: 3420842502237877550}
+  - {fileID: 4798163077370385246}
+  - {fileID: 4649862874365695647}
+  - {fileID: 1000950872099295235}
+  - {fileID: 2363167942295838672}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7876435045527917981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357105663309315375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6872c81af726b4ea8ad42594f699c3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factionTag: Spock
+  enemyTags:
+  - Paper
+  - Lizard
+  targetTags:
+  - Scissor
+  - Rock
+  calmSpeed: 2
+  averageSpeed: 6
+  aggressiveSpeed: 2
+  aggressiveness: 0
+  lowFriendlies: 2
+  highFriendlies: 7
+  lowTargets: 3
+  highTargets: 8
+  lowEnemies: 1
+  highEnemies: 6
+--- !u!1001 &9686768571848268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &7070976980362161706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 9686768571848268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &212453866168318684
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &6985518031352005306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 212453866168318684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2096173588403371362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &9157041579215209732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 2096173588403371362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2347850867782380344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &4798163077370385246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 2347850867782380344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2487363225949335289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &4649862874365695647 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 2487363225949335289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4812354243613566902
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &2363167942295838672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 4812354243613566902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5582779260956708168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &3420842502237877550 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 5582779260956708168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5697105502969421213
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &3248059930231842299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 5697105502969421213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8063507712376629349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &1000950872099295235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 8063507712376629349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8564281118964169777
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420403847458548316}
+    m_Modifications:
+    - target: {fileID: 1613315710018056126, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: groupAI
+      value: 
+      objectReference: {fileID: 7876435045527917981}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562390576199001065, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+      propertyPath: m_Name
+      value: Spock (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+--- !u!4 &1502287219597886551 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7062561247451707494, guid: 9449a524799e5b64aaff92a7a26d7c42, type: 3}
+  m_PrefabInstance: {fileID: 8564281118964169777}
+  m_PrefabAsset: {fileID: 0}

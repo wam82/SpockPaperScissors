@@ -4,16 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Rock
-  - Paper
+  - Obstacle
+  - Camera
   - Scissor
   - Lizard
+  - Rock
   - Spock
+  - Paper
+  - Lizards
+  - Scissors
+  - Rocks
+  - Spocks
+  - Papers
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Obstacle
+  - 
   - Water
   - UI
   - Rock

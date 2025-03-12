@@ -21,16 +21,16 @@ public class GroupAI : MonoBehaviour
     public float aggressiveness;
 
     [Header("Friendly Unit Graph Parameters")] 
-    [SerializeField] private int lowFriendlies;
-    [SerializeField] private int highFriendlies;
+    [SerializeField] private int lowFriendlies = 2;
+    [SerializeField] private int highFriendlies = 7;
     
     [Header("Target Unit Graph Parameters")] 
-    [SerializeField] private int lowTargets;
-    [SerializeField] private int highTargets;
+    [SerializeField] private int lowTargets = 3;
+    [SerializeField] private int highTargets = 8;
     
     [Header("Enemy Unit Graph Parameters")] 
-    [SerializeField] private int lowEnemies;
-    [SerializeField] private int highEnemies;
+    [SerializeField] private int lowEnemies = 1;
+    [SerializeField] private int highEnemies = 6;
     private int CountUnits(string targetTag)
     {
         GameObject[] units = GameObject.FindGameObjectsWithTag(targetTag);

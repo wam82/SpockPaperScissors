@@ -1,3 +1,4 @@
+using AI_Foundation;
 using UnityEngine;
 
 public class Kill : MonoBehaviour
@@ -7,14 +8,14 @@ public class Kill : MonoBehaviour
         if (IsTarget(other.transform))
         {
             PursuitRegistry.Instance.DestroyPursuit(other.transform);
-            PlayerManager.Instance.UpdateList(other.gameObject);
+            GameManager.Instance.RemovePlayerUnit(other.gameObject);
             Destroy(other.gameObject);
         }
     }
     
     private bool IsTarget(Transform other)
     {
-        foreach (string targetTag in transform.GetComponent<IndividualAI>().validTargetTags)
+        foreach (string targetTag in transform.GetComponent<IndividualAI>().targetTags)
         {
             if (other.CompareTag(targetTag))
             {

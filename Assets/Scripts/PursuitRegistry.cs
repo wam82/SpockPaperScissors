@@ -14,7 +14,6 @@ public class PursuitRegistry : MonoBehaviour
             {
                 GameObject go = new GameObject("PursuitRegistry");
                 instance = go.AddComponent<PursuitRegistry>();
-                DontDestroyOnLoad(go);
             }
             
             return instance;
@@ -30,6 +29,7 @@ public class PursuitRegistry : MonoBehaviour
         {
             pursuits.Add(flee, pursuit);
         }
+        // Debug.Log("Pursuit registered for: " + flee.name + " & " + pursuit.name);
     }
 
     public void RemovePursuit(Transform flee)

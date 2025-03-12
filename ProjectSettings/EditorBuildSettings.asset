@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6ef72884ae5a1664382bc8b7ac9074d4
+  - enabled: 1
+    path: Assets/Scenes/FactionSelection.unity
+    guid: c5cffe57291188b4684398734e92be5a
+  - enabled: 1
     path: Assets/Scenes/Game.unity
-    guid: 10bfb4bc444234bdd9400c217352b7af
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 48163c0dc4fc7c64795aeef96761c629, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d0ae1171a74edf14b997a12a70ff001c, type: 3}

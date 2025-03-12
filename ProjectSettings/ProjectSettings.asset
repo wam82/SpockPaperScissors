@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 18d87ce6535b2427e86764d063720e22
+  productGUID: 118aaef5d0a4dae4291eca17de8730ce
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: SpockPaperScissors
+  productName: Sandbox
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -773,14 +773,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: SpockPaperScissors
+  metroPackageName: Sandbox
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: SpockPaperScissors
+  metroApplicationDescription: Sandbox
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -830,9 +830,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Purchasing: 0
     UNet: 1
-    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -852,10 +850,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 25ddc5ac-78c7-4836-92ca-112988b9d2fe
+  cloudProjectId: 27d1cdd2-646b-4049-97ad-7917b48bcb36
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: SpockPaperScissors 2025-03-09_09-46-20
+  projectName: Sandbox
   organizationId: monsterwam82
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
