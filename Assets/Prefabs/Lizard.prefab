@@ -352,6 +352,7 @@ MonoBehaviour:
   avoidanceRadius: 10
   fleeTriggerDistance: 5
   seekResumeDistance: 7.5
+  targetLockDuration: 20
   speedBoost: 3
   boostDuration: 2
   boostCooldown: 2
@@ -471,5 +472,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0

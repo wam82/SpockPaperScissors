@@ -17,7 +17,10 @@ namespace AI_Foundation
         public float avoidanceRadius;
         public float fleeTriggerDistance;
         public float seekResumeDistance;
+        public float targetLockDuration;
         public Vector3 Velocity { get; set; }
+
+        private float targetLockTime;
         
         [Header("Boost Settings")]
         public float speedBoost;
@@ -181,9 +184,9 @@ namespace AI_Foundation
             Velocity += position * Time.deltaTime;
             Velocity = Vector3.ClampMagnitude(Velocity, speed);
             transform.position += Velocity * Time.deltaTime;
-            Vector3 resetY = transform.position;
-            resetY.y = 0;
-            transform.position = resetY;
+            // Vector3 resetY = transform.position;
+            // resetY.y = 0;
+            // transform.position = resetY;
             transform.rotation *= rotation;
         }
         
@@ -211,15 +214,6 @@ namespace AI_Foundation
             }
         }
 
-        private IEnumerator ArriveSequence()
-        {
-            currentState = State.Idle;
-            trackedTarget = ChangeTarget();
-            closestTarget = trackedTarget;
-            yield return new WaitForSeconds(2f);
-            currentState = State.Seeking;
-        }
-
         private void Start()
         {
             GameObject[] foundObstacles = GameObject.FindGameObjectsWithTag("Obstacle");
@@ -237,6 +231,11 @@ namespace AI_Foundation
             if (!isBoosting)
             {
                 speed = groupAI.aggressiveness;
+            }
+
+            if (trackedTarget == null)
+            {
+                trackedTarget = FindRandomTarget();
             }
             
             if ((holder = TargetToFlee()) != null && currentState != State.Fleeing)
@@ -268,6 +267,16 @@ namespace AI_Foundation
                     ChangeTarget();
                     PursuitRegistry.Instance.ClearPursuer(transform);
                 }
+
+                if (trackedTarget != null && currentTime - targetLockTime >= targetLockDuration)
+                {
+                    /* Retargeting if it's been a certain amount of time that unit has been following
+                        same target. This value changes depending on which faction the unit belongs to.*/
+                    trackedTarget = FindRandomTarget();
+                    closestTarget = trackedTarget;
+                    holder = null;
+                    targetLockTime = Time.time;
+                }
                 
                 Move();
             }
@@ -285,11 +294,6 @@ namespace AI_Foundation
                 }
                 
                 Move();
-            }
-
-            if (currentState == State.Arriving)
-            {
-                StartCoroutine(ArriveSequence());
             }
         }
     }

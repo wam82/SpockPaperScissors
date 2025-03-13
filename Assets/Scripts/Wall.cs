@@ -21,7 +21,7 @@ public class Wall : MonoBehaviour
             float angle = i * angleStep;
             float radians = angle * Mathf.Deg2Rad;
 
-            Vector3 position = new Vector3(Mathf.Cos(radians) * radius, 0, Mathf.Sin(radians) * radius);
+            Vector3 position = new Vector3(Mathf.Cos(radians) * radius, 5, Mathf.Sin(radians) * radius);
             GameObject wallSegment = Instantiate(wallPrefab, position, Quaternion.identity);
             wallSegment.transform.LookAt(new Vector3(0, wallSegment.transform.position.y, 0));
             wallSegment.transform.position += wallSegment.transform.forward * (wallThickness / 2);

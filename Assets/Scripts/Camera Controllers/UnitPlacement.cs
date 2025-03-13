@@ -1,15 +1,12 @@
 using System.Collections.Generic;
 using AI_Foundation;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 namespace Camera_Controllers
 {
     public class UnitPlacement : MonoBehaviour
     {
-        public PlayerInput input;
-    
         [Header("Camera Settings")] 
         // public Camera placementCamera;
         public Vector2 movementBounds = new Vector2(15, 15);
@@ -84,7 +81,7 @@ namespace Camera_Controllers
 
         public void SetUp()
         {
-            faction = GameManager.Instance.playerFaction;
+            faction = GameManager.instance.playerFaction;
         
             originalPosition = new Vector2(faction.transform.position.x, faction.transform.position.z);
         
@@ -226,7 +223,7 @@ namespace Camera_Controllers
             {
                 cam.enabled = true;
             }
-            GameManager.Instance.CompleteSetup();
+            GameManager.instance.CompleteSetup();
         }
 
         public List<GameObject> GetUnits()

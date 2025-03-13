@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager instance;
 
     private PlayerInput input;
     
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
                 factions.Add(GameObject.FindGameObjectWithTag("Lizards"));
                 factions.Add(GameObject.FindGameObjectWithTag("Papers"));
                 factions.Add(GameObject.FindGameObjectWithTag("Scissors"));
-                factions.Add(GameObject.FindGameObjectWithTag("Spocks"));;
+                factions.Add(GameObject.FindGameObjectWithTag("Spocks"));
                 break;
             case "Scissors":
                 factions.Add(GameObject.FindGameObjectWithTag("Lizards"));
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     private int GetUnitsCount(GameObject faction)
     {
         int count = 0;
-        foreach (Transform child in faction.transform)
+        foreach (Transform dummy in faction.transform)
         {
             count++;
         }
@@ -144,9 +144,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
         }
         else
         {

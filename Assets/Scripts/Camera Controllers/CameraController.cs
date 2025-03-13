@@ -116,7 +116,7 @@ namespace Camera_Controllers
 
         public void SetUp()
         {
-            foreach (GameObject unit in GameManager.Instance.units)
+            foreach (GameObject unit in GameManager.instance.units)
             {
                 units.Add(unit);
             }
