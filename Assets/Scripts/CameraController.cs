@@ -141,8 +141,8 @@ public class CameraController : MonoBehaviour
     {
         if (!isFreeCameraActive)
         {
-            cameraTransform.position = units[currentCameraIndex].transform.position;
-            cameraTransform.rotation = units[currentCameraIndex].transform.rotation;
+            cameraTransform.position = unitCameras[currentCameraIndex].transform.position;
+            cameraTransform.rotation = unitCameras[currentCameraIndex].transform.rotation;
             return;
         }
         // Movement

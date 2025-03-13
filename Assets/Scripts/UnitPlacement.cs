@@ -146,6 +146,7 @@ public class UnitPlacement : MonoBehaviour
         }
         
         Vector3 position = ghost.position;
+        position.y = 0;
         unit.transform.position = position;
 
         unitIndex++;
