@@ -7,6 +7,11 @@ public class Kill : MonoBehaviour
     {
         if (IsTarget(other.transform))
         {
+            Camera cam = other.gameObject.GetComponentInChildren<Camera>();
+            if (cam != null && cam.enabled)
+            {
+                GameManager.Instance.mainCamera.GetComponent<CameraController>().CycleUnitCamera(1);
+            }
             PursuitRegistry.Instance.DestroyPursuit(other.transform);
             GameManager.Instance.RemovePlayerUnit(other.gameObject);
             Destroy(other.gameObject);

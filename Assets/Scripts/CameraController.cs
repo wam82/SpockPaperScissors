@@ -71,7 +71,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void CycleUnitCamera(int direction)
+    public void CycleUnitCamera(int direction)
     {
         unitCameras.RemoveAll(cam => cam == null);
         
