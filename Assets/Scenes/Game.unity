@@ -1542,6 +1542,7 @@ MonoBehaviour:
   input: {fileID: 1309344473}
   movementBounds: {x: 15, y: 15}
   moveSpeed: 10
+  rotateSpeed: 15
   zoomSpeed: 7.5
   minCameraY: 5
   maxCameraY: 50
@@ -3205,6 +3206,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 435bb4be-d17f-41a6-9e48-3a7347549c3d
     m_ActionName: UI/Cancel[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 417502272}
+        m_TargetAssemblyTypeName: Camera_Controllers.UnitPlacement, Assembly-CSharp
+        m_MethodName: OnRotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 81b485b1-e043-423a-a2c2-26c5ade45887
+    m_ActionName: SetUp/Rotate[/XboxOneGampadMacOSWireless/rightStick]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game

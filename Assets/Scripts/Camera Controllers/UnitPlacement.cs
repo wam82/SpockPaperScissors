@@ -15,6 +15,7 @@ namespace Camera_Controllers
         public Vector2 movementBounds = new Vector2(15, 15);
         private Vector2 originalPosition;
         public float moveSpeed;
+        public float rotateSpeed;
         public float zoomSpeed;
         public float minCameraY;
         public float maxCameraY;
@@ -30,10 +31,16 @@ namespace Camera_Controllers
 
         private Vector2 moveInput;
         private float zoomInput;
+        private float rotateInput;
 
         public void OnMove(CallbackContext context)
         {
             moveInput = context.ReadValue<Vector2>();
+        }
+
+        public void OnRotate(CallbackContext context)
+        {
+            rotateInput = context.ReadValue<Vector2>().x;
         }
     
         public void OnZoomIn(CallbackContext context)
@@ -108,21 +115,35 @@ namespace Camera_Controllers
 
         private void HandleCameraMovement()
         {
-            Vector3 deltaMovement = new Vector3(moveInput.x, 0f, moveInput.y) * (moveSpeed * Time.deltaTime);
+            // Calculate camera's local right and forward directions (flattened on the XZ plane)
+            Vector3 cameraRight = transform.right;
+            cameraRight.y = 0f;
+            cameraRight.Normalize();
+
+            Vector3 cameraForward = transform.forward;
+            cameraForward.y = 0f;
+            cameraForward.Normalize();
+
+            // Compute movement based on camera's orientation
+            Vector3 deltaMovement = (cameraRight * moveInput.x + cameraForward * moveInput.y) * (moveSpeed * Time.deltaTime);
             Vector3 newPosition = transform.position + deltaMovement;
-        
+    
+            // Clamp position within the movement bounds (assuming originalPosition.x and originalPosition.y represent world X and Z)
             newPosition.x = Mathf.Clamp(newPosition.x, originalPosition.x - movementBounds.x, originalPosition.x + movementBounds.x);
             newPosition.z = Mathf.Clamp(newPosition.z, originalPosition.y - movementBounds.y, originalPosition.y + movementBounds.y);
-
+    
             transform.position = newPosition;
-        
+    
+            // Handle zooming
             transform.position += transform.forward * (zoomInput * zoomSpeed * Time.deltaTime);
             Vector3 clampedPosition = transform.position;
             clampedPosition.y = Mathf.Clamp(clampedPosition.y, minCameraY, maxCameraY);
             transform.position = clampedPosition;
-        
-            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+    
+            // Apply rotation (if you intend to rotate around the z-axis, keep as is; otherwise consider rotating on the y-axis)
+            transform.Rotate(0f, 0f, -rotateInput * rotateSpeed * Time.deltaTime);
         }
+
 
         private void UpdateGhost()
         {
@@ -133,6 +154,7 @@ namespace Camera_Controllers
             // Example: ghostPos.x = Mathf.Round(ghostPos.x / gridSize) * gridSize;
         
             ghost.position = ghostPosition;
+            ghost.Rotate(0f, rotateInput * rotateSpeed * Time.deltaTime, 0f);
         }
 
         private void Place()
@@ -154,6 +176,7 @@ namespace Camera_Controllers
             Vector3 position = ghost.position;
             position.y = 0;
             unit.transform.position = position;
+            unit.transform.rotation = ghost.rotation;
 
             unitIndex++;
 
