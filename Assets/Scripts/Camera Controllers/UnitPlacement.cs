@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using AI_Foundation;
+using Menu_Controls;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -18,6 +19,7 @@ namespace Camera_Controllers
         public float maxCameraY;
 
         [Header("Unit Placement Settings")] 
+        public Setup overlaySetup;
         public GameObject faction;
         public Transform ghost;
         public float unitY;
@@ -62,6 +64,7 @@ namespace Camera_Controllers
                 }
                 else
                 {
+                    
                     ConfirmPlacement();
                 }
             }
@@ -90,6 +93,9 @@ namespace Camera_Controllers
                 units.Add(child.gameObject);
                 child.gameObject.SetActive(false);
             }
+            
+            overlaySetup.DisableConfirmation();
+            overlaySetup.UpdateUnits(units.Count);
         }
 
         private void DisplayUnit(GameObject unit)
@@ -100,6 +106,8 @@ namespace Camera_Controllers
                 return;
             }
 
+            overlaySetup.UpdateUnits(units.Count - unitIndex);
+            
             Camera unitCamera = unit.GetComponentInChildren<Camera>();
             if (unitCamera != null)
             {
@@ -181,8 +189,9 @@ namespace Camera_Controllers
             if (unitIndex >= units.Count)
             {
                 ghost.gameObject.SetActive(false);
+                overlaySetup.EnableConfirmation();
             }
-        
+            
             DisplayUnit(unit);
         }
 
@@ -190,12 +199,14 @@ namespace Camera_Controllers
         {
             if (unitIndex <= 0)
             {
-                Debug.LogWarning("No unites to undo");
+                Debug.LogWarning("No units to undo");
                 return;
             }
 
             unitIndex--;
             GameObject unit = units[unitIndex];
+            overlaySetup.DisableConfirmation();
+            overlaySetup.UpdateUnits(units.Count - unitIndex);
 
             if (unit == null)
             {
@@ -219,6 +230,7 @@ namespace Camera_Controllers
 
         private void ConfirmPlacement()
         {
+            overlaySetup.gameObject.SetActive(false);
             foreach (Camera cam in unitCameras)
             {
                 cam.enabled = true;
