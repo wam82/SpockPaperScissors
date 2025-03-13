@@ -9,8 +9,9 @@ public class UnitPlacement : MonoBehaviour
     public PlayerInput input;
     
     [Header("Camera Settings")] 
-    public Camera placementCamera;
+    // public Camera placementCamera;
     public Vector2 movementBounds = new Vector2(15, 15);
+    private Vector2 originalPosition;
     public float moveSpeed;
     public float zoomSpeed;
     public float minCameraY;
@@ -75,6 +76,9 @@ public class UnitPlacement : MonoBehaviour
     public void SetUp()
     {
         faction = GameManager.Instance.playerFaction;
+        
+        originalPosition = new Vector2(faction.transform.position.x, faction.transform.position.z);
+        
         foreach (Transform child in faction.transform)
         {
             units.Add(child.gameObject);
@@ -103,24 +107,24 @@ public class UnitPlacement : MonoBehaviour
     private void HandleCameraMovement()
     {
         Vector3 deltaMovement = new Vector3(moveInput.x, 0f, moveInput.y) * (moveSpeed * Time.deltaTime);
-        Vector3 newPosition = placementCamera.transform.position + deltaMovement;
+        Vector3 newPosition = transform.position + deltaMovement;
         
-        newPosition.x = Mathf.Clamp(newPosition.x, -movementBounds.x, movementBounds.x);
-        newPosition.z = Mathf.Clamp(newPosition.z, -movementBounds.y, movementBounds.y);
+        newPosition.x = Mathf.Clamp(newPosition.x, originalPosition.x - movementBounds.x, originalPosition.x + movementBounds.x);
+        newPosition.z = Mathf.Clamp(newPosition.z, originalPosition.y - movementBounds.y, originalPosition.y + movementBounds.y);
 
-        placementCamera.transform.position = newPosition;
+        transform.position = newPosition;
         
-        placementCamera.transform.position += placementCamera.transform.forward * (zoomInput * zoomSpeed * Time.deltaTime);
-        Vector3 clampedPosition = placementCamera.transform.position;
+        transform.position += transform.forward * (zoomInput * zoomSpeed * Time.deltaTime);
+        Vector3 clampedPosition = transform.position;
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, minCameraY, maxCameraY);
-        placementCamera.transform.position = clampedPosition;
+        transform.position = clampedPosition;
         
-        placementCamera.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
     private void UpdateGhost()
     {
-        Vector3 ghostPosition = placementCamera.transform.position;
+        Vector3 ghostPosition = transform.position;
         ghostPosition.y = unitY;
         
         // Grid snapping would go here
@@ -151,7 +155,7 @@ public class UnitPlacement : MonoBehaviour
 
         unitIndex++;
 
-        placementCamera.transform.position += offset;
+        transform.position += offset;
 
         if (unitIndex >= units.Count)
         {
@@ -178,7 +182,7 @@ public class UnitPlacement : MonoBehaviour
             return;
         }
         
-        placementCamera.transform.position = new Vector3(unit.transform.position.x, placementCamera.transform.position.y, unit.transform.position.z);
+        transform.position = new Vector3(unit.transform.position.x, transform.position.y, unit.transform.position.z);
         
         HideUnit(unit);
     }
@@ -205,12 +209,6 @@ public class UnitPlacement : MonoBehaviour
     {
         return units;
     }
-    // private void Awake()
-    // {
-    //     input = GetComponent<PlayerInput>();
-    //     // input.actions.FindActionMap("SetUp").Enable();
-    //     // input.actions.FindActionMap("Game").Disable();
-    // }
 
     private void Update()
     {

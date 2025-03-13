@@ -106,13 +106,14 @@ public class GameManager : MonoBehaviour
     {
         DisableEnemies();
         mainCamera.gameObject.SetActive(false);
-        setupCamera.gameObject.SetActive(true);
-        setupCamera.GetComponent<UnitPlacement>().SetUp();
-
-        Vector3 position = setupCamera.GetComponent<UnitPlacement>().faction.transform.position;
+        
+        Vector3 position = playerFaction.transform.position;
         position.y = 40;
+        Debug.Log(position);
         setupCamera.transform.position = position;
         
+        setupCamera.gameObject.SetActive(true);
+        setupCamera.GetComponent<UnitPlacement>().SetUp();
         
         input.actions.FindActionMap("Game").Disable();
         input.actions.FindActionMap("SetUp").Enable();
