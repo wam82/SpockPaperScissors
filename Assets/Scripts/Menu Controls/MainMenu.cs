@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
 
         if (navigation.y > 0) _selectedIndex = Mathf.Max(0, _selectedIndex - 1);
         if (navigation.y < 0) _selectedIndex = Mathf.Min(_buttons.Length - 1, _selectedIndex + 1);
-
+        
         // Visually indicate selection (if needed)
         HighlightButton(_selectedIndex);
     }
@@ -65,7 +65,10 @@ public class MainMenu : MonoBehaviour
     }
     private void OnPlayButtonClicked()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        Input.actions["Navigate"].performed -= OnNavigate;
+        Input.actions["Submit"].performed -= OnSubmit;
+        Input.actions.FindActionMap("UI").Disable();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("FactionSelection");
     }
     
     private void OnExitButtonClicked()

@@ -165,8 +165,8 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Game")
         {
             // Debug.Log(ApplicationModel.factionTag);
-            // playerFaction = GameObject.FindGameObjectWithTag(ApplicationModel.factionTag);
-            // InstantiateSceneObjects();
+            playerFaction = GameObject.FindGameObjectWithTag(ApplicationModel.factionTag);
+            InstantiateSceneObjects();
             SetUp();
         }
     }
