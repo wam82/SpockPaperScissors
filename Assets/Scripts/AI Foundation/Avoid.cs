@@ -11,7 +11,7 @@ namespace AI_Foundation
             float avoidDistanceSquared = agent.avoidanceRadius * agent.avoidanceRadius;
             
             Vector3 force = Vector3.zero;
-            foreach (Transform obstacle in agent.obstacles)
+            foreach (GameObject obstacle in agent.obstacles)
             {
                 Collider obstacleCollider = obstacle.GetComponent<Collider>();
                 

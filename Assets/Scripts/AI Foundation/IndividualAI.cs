@@ -31,7 +31,7 @@ namespace AI_Foundation
         [Header("Agent Parameters")]
         [SerializeField] private GroupAI groupAI;
         public List<string> targetTags = new List<string>();
-        [SerializeField] public List<Transform> obstacles = new List<Transform>();
+        [SerializeField] public List<GameObject> obstacles = new List<GameObject>();
         public LayerMask enemyLayer;
 
         [Header("Target Parameters")] 
@@ -222,6 +222,9 @@ namespace AI_Foundation
 
         private void Start()
         {
+            GameObject[] foundObstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+            obstacles.AddRange(foundObstacles);
+                
             trackedTarget = FindRandomTarget();
             closestTarget = trackedTarget;
             currentState = State.Seeking;
