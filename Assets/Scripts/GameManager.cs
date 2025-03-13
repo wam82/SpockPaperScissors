@@ -84,7 +84,6 @@ public class GameManager : MonoBehaviour
         if (unit.CompareTag(playerFaction.GetComponent<GroupAI>().factionTag))
         {
             units.Remove(unit);
-            mainCamera.GetComponent<CameraController>().RemoveUnit(unit);
         }
     }
     public void CompleteSetup()

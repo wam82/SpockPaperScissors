@@ -71,19 +71,10 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void RemoveUnit(GameObject unit)
-    {
-        if (unit == null)
-        {
-            return;
-        }
-        Camera camera = unit.GetComponentInChildren<Camera>();
-        unitCameras.Remove(camera);
-        units.Remove(unit);
-    }
-
     private void CycleUnitCamera(int direction)
     {
+        unitCameras.RemoveAll(cam => cam == null);
+        
         if (unitCameras.Count == 0) return;
 
         currentCameraIndex = (currentCameraIndex + direction + unitCameras.Count) % unitCameras.Count;
