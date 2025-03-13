@@ -352,9 +352,10 @@ MonoBehaviour:
   avoidanceRadius: 10
   fleeTriggerDistance: 5
   seekResumeDistance: 7.5
-  speedBoost: 2
+  speedBoost: 3
   boostDuration: 2
   boostCooldown: 2
+  groupAI: {fileID: 0}
   targetTags:
   - Rock
   - Spock

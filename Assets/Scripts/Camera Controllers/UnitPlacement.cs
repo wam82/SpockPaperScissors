@@ -120,7 +120,7 @@ namespace Camera_Controllers
             cameraRight.y = 0f;
             cameraRight.Normalize();
 
-            Vector3 cameraForward = transform.forward;
+            Vector3 cameraForward = transform.up;
             cameraForward.y = 0f;
             cameraForward.Normalize();
 
@@ -140,7 +140,6 @@ namespace Camera_Controllers
             clampedPosition.y = Mathf.Clamp(clampedPosition.y, minCameraY, maxCameraY);
             transform.position = clampedPosition;
     
-            // Apply rotation (if you intend to rotate around the z-axis, keep as is; otherwise consider rotating on the y-axis)
             transform.Rotate(0f, 0f, -rotateInput * rotateSpeed * Time.deltaTime);
         }
 
