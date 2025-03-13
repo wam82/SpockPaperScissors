@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AI_Foundation;
 using Menu_Controls;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.InputSystem.InputAction;
 
 namespace Camera_Controllers
@@ -231,6 +232,7 @@ namespace Camera_Controllers
         private void ConfirmPlacement()
         {
             overlaySetup.gameObject.SetActive(false);
+            GameManager.instance.gameOverlay.document.rootVisualElement.style.display = DisplayStyle.Flex;
             foreach (Camera cam in unitCameras)
             {
                 cam.enabled = true;

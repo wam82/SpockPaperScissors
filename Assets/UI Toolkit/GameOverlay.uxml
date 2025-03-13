@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:VisualElement name="UnitsContainer" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="Numer of friendly units remaining: " parse-escape-sequences="true" display-tooltip-when-elided="true" name="Units" style="font-size: 15px; -unity-font-style: bold-and-italic; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="FactionsContainer" style="flex-grow: 1; flex-direction: column-reverse; justify-content: space-between; align-items: auto;">
+            <ui:Label tabindex="-1" text="Number of papers remaining: &#10;Number of lizards remaining:&#10;Number of scissors remaining:&#10;Number of spocks remaining:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Others" style="color: rgb(255, 255, 255); font-size: 15px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using AI_Foundation;
 using Camera_Controllers;
+using Menu_Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> units = new List<GameObject>();
     public List<GameObject> factions = new List<GameObject>();
     public GameObject playerFaction;
+    
+    public GameOverlay gameOverlay;
 
     private void InstantiateSceneObjects()
     {
@@ -164,7 +168,6 @@ public class GameManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "Game")
         {
-            // Debug.Log(ApplicationModel.factionTag);
             playerFaction = GameObject.FindGameObjectWithTag(ApplicationModel.factionTag);
             InstantiateSceneObjects();
             SetUp();
@@ -173,6 +176,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (gameOverlay.gameObject.activeInHierarchy == true)
+        {
+            gameOverlay.UpdateFriendlyUnits("Number of " + playerFaction.name.ToLower() + " remaining: " + units.Count);
+            string others = "";
+            foreach (GameObject faction in factions)
+            {
+                others += "Number of " + faction.name.ToLower() + " remaining: " + GetUnitsCount(faction) + "\n";
+            }
+            gameOverlay.UpdateOthers(others);
+        }
+        
         foreach (GameObject faction in factions)
         {
             if (GetUnitsCount(faction) <= 0)
