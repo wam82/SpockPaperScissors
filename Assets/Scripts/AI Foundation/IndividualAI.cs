@@ -123,6 +123,28 @@ namespace AI_Foundation
             return closest;
         }
 
+        private Transform FindRandomTarget()
+        {
+            List<Transform> validTargets = new List<Transform>();
+
+            foreach (string targetTag in targetTags)
+            {
+                GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag);
+                foreach (GameObject target in targets)
+                {
+                    validTargets.Add(target.transform);
+                }
+            }
+
+            if (validTargets.Count == 0)
+            {
+                return null;
+            }
+            
+            int randomIndex = Random.Range(0, validTargets.Count);
+            return validTargets[randomIndex];
+        }
+
         private Transform ChangeTarget()
         {
             float minDistance = Mathf.Infinity;
@@ -154,9 +176,14 @@ namespace AI_Foundation
         private void Move()
         {
             GetSteeringSum(out Vector3 steeringForceSum, out Quaternion rotation);
-            Velocity += steeringForceSum * Time.deltaTime;
+            Vector3 position = steeringForceSum;
+            position.y = 0;
+            Velocity += position * Time.deltaTime;
             Velocity = Vector3.ClampMagnitude(Velocity, speed);
             transform.position += Velocity * Time.deltaTime;
+            Vector3 resetY = transform.position;
+            resetY.y = 0;
+            transform.position = resetY;
             transform.rotation *= rotation;
         }
         
@@ -195,7 +222,7 @@ namespace AI_Foundation
 
         private void Start()
         {
-            trackedTarget = FindClosestTarget();
+            trackedTarget = FindRandomTarget();
             closestTarget = trackedTarget;
             currentState = State.Seeking;
         }

@@ -109,7 +109,6 @@ public class GameManager : MonoBehaviour
         
         Vector3 position = playerFaction.transform.position;
         position.y = 40;
-        Debug.Log(position);
         setupCamera.transform.position = position;
         
         setupCamera.gameObject.SetActive(true);
