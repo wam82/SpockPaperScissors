@@ -5488,6 +5488,7 @@ GameObject:
   - component: {fileID: 1907570167}
   - component: {fileID: 1907570166}
   - component: {fileID: 1907570165}
+  - component: {fileID: 1907570169}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -5575,13 +5576,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907570164}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 200, y: 0.01, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &1907570169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907570164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e690937cc466f459272458f94afa57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallPrefab: {fileID: 6876662403593431027, guid: 9ad9d6c53e36d7e45954f2202b0cc4eb, type: 3}
+  parent: {fileID: 1907570164}
+  radius: 100
+  segmentCount: 20
+  wallThickness: 1
 --- !u!1 &1961498333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3043281718874489951, guid: 1236721af2a671a489ef577da0aa47ca, type: 3}
