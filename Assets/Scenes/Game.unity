@@ -5014,6 +5014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spocks
       objectReference: {fileID: 0}
+    - target: {fileID: 7876435045527917981, guid: 1236721af2a671a489ef577da0aa47ca, type: 3}
+      propertyPath: aggressiveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8756391435075979227, guid: 1236721af2a671a489ef577da0aa47ca, type: 3}
       propertyPath: obstacles.Array.size
       value: 10

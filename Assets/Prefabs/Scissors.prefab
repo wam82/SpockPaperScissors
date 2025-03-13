@@ -63,7 +63,7 @@ MonoBehaviour:
   - Lizard
   calmSpeed: 2
   averageSpeed: 6
-  aggressiveSpeed: 2
+  aggressiveSpeed: 10
   aggressiveness: 0
   lowFriendlies: 2
   highFriendlies: 7

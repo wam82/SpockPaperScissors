@@ -17,7 +17,7 @@ public class GroupAI : MonoBehaviour
     [Header("Speed Settings")]
     [SerializeField] private float calmSpeed = 2f;
     [SerializeField] private float averageSpeed = 6f;
-    [SerializeField] private float aggressiveSpeed = 2f;
+    [SerializeField] private float aggressiveSpeed = 10f;
     public float aggressiveness;
 
     [Header("Friendly Unit Graph Parameters")] 
@@ -124,6 +124,20 @@ public class GroupAI : MonoBehaviour
         // 7) If (Low#TargetUnits OR Low#FriendlyUnits) OR Low#EnemyUnits then move calmly
         float rule7 = MathF.Max(MathF.Max(targetLow, friendlyLow), enemyLow);
         
+        // 8) If (Low#FriendlyUnits AND High#TargetUnits AND Low#EnemyUnits) then aggressive
+        float rule8 = MathF.Min(MathF.Min(targetHigh, enemyLow), friendlyLow);
+        
+        // 9) If (High#EnemyUnits AND Low#TargetUnits) OR Low#FriendlyUnits then aggressive
+        float rule9 = MathF.Max(MathF.Min(enemyHigh, targetLow), friendlyLow);
+        
+        // 10) If (Low#FriendlyUnits OR High#EnemyUnits) AND NOT Low#EnemyUnits then aggressive
+        float rule10 = MathF.Min(MathF.Max(friendlyLow, enemyHigh), 1 - enemyLow);
+        
+        // 11) If (High#FriendlyUnits OR Low#EnemyUnits) AND (NOT High#TargetUnits OR NOT High#EnemyUnits) then move calmly
+        float rule11 = MathF.Min(MathF.Max(friendlyHigh, enemyLow), MathF.Max(1 - targetHigh, 1 - enemyHigh));
+        
+        // 12) If (NOT Low#FriendlyUnits OR High#EnemyUnits) then move calmly
+        float rule12 = MathF.Max(1 - friendlyLow, enemyHigh);
         
         // Defuzzification
         float numerator = 0f;
@@ -136,8 +150,14 @@ public class GroupAI : MonoBehaviour
         AddRuleContribution(ref numerator, ref denominator, rule5, aggressiveSpeed);
         AddRuleContribution(ref numerator, ref denominator, rule6, averageSpeed);
         AddRuleContribution(ref numerator, ref denominator, rule7, calmSpeed);
+        AddRuleContribution(ref numerator, ref denominator, rule8, aggressiveSpeed);
+        AddRuleContribution(ref numerator, ref denominator, rule9, aggressiveSpeed);
+        AddRuleContribution(ref numerator, ref denominator, rule10, aggressiveSpeed);
+        AddRuleContribution(ref numerator, ref denominator, rule11, calmSpeed);
+        AddRuleContribution(ref numerator, ref denominator, rule12, calmSpeed);
 
         float speed = (denominator > 0) ? numerator / denominator : averageSpeed;
+        // Debug.Log(numerator + " / " + denominator);
         speed = MathF.Min(speed, aggressiveSpeed);
         aggressiveness = speed;
     }
