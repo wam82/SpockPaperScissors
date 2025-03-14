@@ -263,7 +263,7 @@ MonoBehaviour:
     m_ActionName: UI/Cancel[/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Game
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &172991581
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c41ea1802428b4bb1a995fdb51593f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Input: {fileID: 0}
+  playerInput: {fileID: 172991580}
 --- !u!1 &183395181
 GameObject:
   m_ObjectHideFlags: 0
