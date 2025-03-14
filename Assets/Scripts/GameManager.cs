@@ -198,6 +198,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        
         if (gameOverlay.gameObject.activeInHierarchy == true)
         {
             gameOverlay.UpdateFriendlyUnits("Number of " + playerFaction.name.ToLower() + " remaining: " + units.Count);
@@ -213,7 +214,8 @@ public class GameManager : MonoBehaviour
         {
             if (GetUnitsCount(faction) <= 0)
             {
-                Time.timeScale = 0;
+                ApplicationModel.winningFactionTag = faction.name;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("EndCredit");
                 Debug.Log(faction.name + " has lost");
                 break;
             }
