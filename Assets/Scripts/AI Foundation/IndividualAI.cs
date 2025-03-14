@@ -226,6 +226,10 @@ namespace AI_Foundation
 
         private void Update()
         {
+            if (GameManager.instance.gameState == GameManager.GameState.Pause)
+            {
+                return;
+            }
             float currentTime = Time.time;
 
             if (!isBoosting)

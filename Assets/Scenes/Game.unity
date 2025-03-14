@@ -122,6 +122,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &98966012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98966015}
+  - component: {fileID: 98966014}
+  - component: {fileID: 98966013}
+  m_Layer: 5
+  m_Name: PauseMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &98966013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98966012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7b416bf2da7d44791786b3cf1b9d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 98966014}
+--- !u!114 &98966014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98966012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 0eb910514cdd4384a9a43e3f191124e1, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 884b46970c0353b4094fa638ed6cf630, type: 3}
+  m_SortingOrder: 2
+--- !u!4 &98966015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98966012}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188116728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,6 +3297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0650c1e16b5265b45ab374d1ae40bd7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 0}
   gameState: 0
   mainCamera: {fileID: 963194227}
   setupCamera: {fileID: 417502273}
@@ -3242,6 +3305,7 @@ MonoBehaviour:
   factions: []
   playerFaction: {fileID: 0}
   gameOverlay: {fileID: 1780425022}
+  pauseController: {fileID: 98966013}
 --- !u!4 &1309344472
 Transform:
   m_ObjectHideFlags: 0
@@ -3486,6 +3550,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 81b485b1-e043-423a-a2c2-26c5ade45887
     m_ActionName: SetUp/Rotate[/XboxOneGampadMacOSWireless/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: Camera_Controllers.CameraController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c319bbcd-fd8b-465b-93c4-4f24a1e40125
+    m_ActionName: Game/Pause[/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game
@@ -7495,3 +7575,4 @@ SceneRoots:
   - {fileID: 1570141624}
   - {fileID: 2003369833}
   - {fileID: 1780425021}
+  - {fileID: 98966015}

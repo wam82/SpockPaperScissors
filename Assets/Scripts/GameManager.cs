@@ -6,12 +6,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private PlayerInput input;
+    public PlayerInput input;
     
     public enum GameState
     {
@@ -29,7 +30,23 @@ public class GameManager : MonoBehaviour
     public GameObject playerFaction;
     
     public GameOverlay gameOverlay;
+    public PauseController pauseController;
 
+    public void PauseGame()
+    {
+        gameState = GameState.Pause;
+        pauseController.document.rootVisualElement.style.display = DisplayStyle.Flex;
+        pauseController.Pause();
+    }
+    public void ResumeGame()
+    {
+        if (gameState == GameState.Pause)
+        {
+            pauseController.document.rootVisualElement.style.display = DisplayStyle.None;
+            gameState = GameState.Play;
+        }
+    }
+    
     private void InstantiateSceneObjects()
     {
         switch (playerFaction.tag)
@@ -121,6 +138,7 @@ public class GameManager : MonoBehaviour
         
         input.actions.FindActionMap("Game").Disable();
         input.actions.FindActionMap("SetUp").Enable();
+        pauseController.document.rootVisualElement.style.display = DisplayStyle.None;
     }
 
     private void EnableEnemies()
@@ -176,6 +194,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (gameState == GameState.Pause)
+        {
+            return;
+        }
         if (gameOverlay.gameObject.activeInHierarchy == true)
         {
             gameOverlay.UpdateFriendlyUnits("Number of " + playerFaction.name.ToLower() + " remaining: " + units.Count);

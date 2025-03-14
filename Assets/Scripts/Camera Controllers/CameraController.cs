@@ -71,6 +71,11 @@ namespace Camera_Controllers
             }
         }
 
+        public void OnPause(CallbackContext context)
+        {
+            GameManager.instance.PauseGame();
+        }
+
         public void CycleUnitCamera(int direction)
         {
             unitCameras.RemoveAll(cam => cam == null);

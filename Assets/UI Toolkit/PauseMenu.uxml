@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenu.uss?fileID=7433441132597879392&amp;guid=8d726345485e59b468202f9e69707336&amp;type=3#MainMenu" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.86); align-self: stretch; justify-content: space-between; align-items: center;">
+        <ui:Label tabindex="-1" text="Game Paused" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 50px; color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+        <ui:VisualElement name="ResumeContainer" style="flex-grow: 1; align-items: stretch; justify-content: center; width: 50%;">
+            <ui:Button text="Resume Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Resume" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(0, 0, 0); border-left-color: rgb(195, 195, 195); border-right-color: rgb(195, 195, 195); border-top-color: rgb(195, 195, 195); border-bottom-color: rgb(195, 195, 195); color: rgb(255, 255, 255); font-size: 25px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ReturnContainer" style="flex-grow: 1; width: 50%;">
+            <ui:Button text="Return to Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Return" style="font-size: 25px; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
